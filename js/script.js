@@ -17,21 +17,49 @@ $(document).ready(function () {
            $('#results').empty(); // Clears previous search
 
            meals.forEach(function (meal) {
+
+            var ingredientsList = "<ul>";
+
+            var instructions = meal.strInstructions || "No instructions available.";
+
+            for (var i = 1; i <= 20; i++) {
+                var ingredient = meal[`strIngredient${i}`];
+                var measure = meal[`strMeasure${i}`];
+
+                if (ingredient && ingredient.trim() !== "") {
+                    ingredientsList += `<li>${ingredient} - ${measure}</li>`;
+
+                }
+            } ingredientsList += "</ul>";
+
             var card = `
-                <div class="recipe-card">
+                <div class="recipeCard">
                     <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
-                    <h2>${meal.strMeal}</h2>
+                    <div class="recipeBody">
+                    
+                        <h2><strong>${meal.strMeal}</strong></h2>      
+                        <p><strong>Category: </strong> ${meal.strCategory || "N/A"}</p>
+                        <p><strong>Area:</strong> ${meal.strArea || "N/A"}</p>
+
+                        <h3>Ingredients: </h3>
+                        ${ingredientsList}
+
+                        <h3><strong>Instructions:</strong></h3>
+                        <p class="instructions">${instructions}</p>
+
+                    </div>
                 </div>
             `;
 
-$('#results').append(card);
-           }); // Loops through the meals
-       })// Runs on success
 
-           .fail(function () {
-               console.log("Error contacting API");
-           });// Runs on fail
-   });
+    $('#results').append(card);
+            }); // Loops through the meals
+        })// Runs on success
+
+            .fail(function () {
+                console.log("Error contacting API");
+            });// Runs on fail
+    });
    
    
  
