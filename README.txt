@@ -19,7 +19,7 @@
         -HTML5
         -CSS3
         -JavaScript
-        -JQuery
+        -jQuery
         -TheMealDB API
 
     HOW TO RUN
@@ -29,12 +29,12 @@
 
         No tools or servers required, it all runs on browser.
 
-        Currently only has a desktop version.
+        Currently optimized for desktop only.
 
     PROJECT STRUCTURE
         /CSS
-            reset.CSS
-            style.CSS
+            reset.css
+            style.css
         /js
             script.js
         index.html
@@ -46,7 +46,7 @@
         -Mobile support
         -Card animations
         -Checklist for ingredients and/or instructions
-        -dedicated saved recipes page
+        -Dedicated saved recipes page
 
     REFERENCES
         Background Image -- https://www.istockphoto.com/illustrations/ingredients-black-background
