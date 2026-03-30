@@ -52,6 +52,8 @@
         CoPilot was used to help with debugging and helping me learn understand how to use APIs.
         It also helped me in deciding which API to use.
 
+        All suggestions were reviewed and tested before implementation.
+
     REFERENCES
         Background Image -- https://www.istockphoto.com/illustrations/ingredients-black-background
         Search API -- https://www.themealdb.com/api/json/v1/1/search.php?s=
